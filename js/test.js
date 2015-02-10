@@ -107,7 +107,7 @@ describe("About Arrays", function() {
         var array = [1, 2];
 
         array.unshift(3);
-        expect(array.toString()).to.equal("1,2,3");
+        expect(array.toString()).to.equal("3,1,2");
 
         var shiftedValue = array.shift();
         expect(shiftedValue).to.equal(3);
