@@ -36,30 +36,30 @@ describe("About Arrays", function() {
 
     it("should understand array literals", function() {
         var array = [];
-        expect(array.toString()).to.equal(FILL_ME_IN);
+        expect(array.toString()).to.equal("");
 
         array[0] = 1;
-        expect(array.toString()).to.equal(FILL_ME_IN);
+        expect(array.toString()).to.equal("1");
 
         array[1] = 2;
-        expect(array).to.equal([1, FILL_ME_IN]);
+        expect(array).to.equal([1, 2]);
 
         array.push(3);
-        expect(array).to.equal(FILL_ME_IN);
+        expect(array).to.equal([1, 2, 3]);
     });
 
     it("should understand array length", function() {
         var fourNumberArray = [1, 2, 3, 4];
 
-        expect(fourNumberArray.length).to.equal("");
+        expect(fourNumberArray.length).to.equal(4);
         fourNumberArray.push(5, 6);
-        expect(fourNumberArray.length).to.equal("1");
+        expect(fourNumberArray.length).to.equal(6);
 
         var tenEmptyElementArray = new Array(10);
-        expect(tenEmptyElementArray.length).to.equal(1, 2);
+        expect(tenEmptyElementArray.length).to.equal(10);
 
         tenEmptyElementArray.length = 5;
-        expect(tenEmptyElementArray.length).to.equal([1, 2, 3]);
+        expect(tenEmptyElementArray.length).to.equal(5);
     });
 
     it("should slice arrays", function() {
@@ -81,36 +81,36 @@ describe("About Arrays", function() {
             refArray[1] = "changed in function";
         }
         passedByReference(array);
-        expect(array[1]).to.equal(FILL_ME_IN);
+        expect(array[1]).to.equal("changed in function");
 
         var assignedArray = array;
         assignedArray[5] = "changed in assignedArray";
-        expect(array[5]).to.equal(FILL_ME_IN);
+        expect(array[5]).to.equal("changed in assignedArray");
 
         var copyOfArray = array.slice();
         copyOfArray[3] = "changed in copyOfArray";
-        expect(array[3]).to.equal(FILL_ME_IN);
+        expect(array[3]).to.equal("three");
     });
 
     it("should push and pop", function() {
         var array = [1, 2];
         array.push(3);
 
-        expect(array.toString()).to.equal(FILL_ME_IN);
+        expect(array.toString()).to.equal("1,2,3");
 
         var poppedValue = array.pop();
-        expect(poppedValue).to.equal(FILL_ME_IN);
-        expect(array.toString()).to.equal(FILL_ME_IN);
+        expect(poppedValue).to.equal(3);
+        expect(array.toString()).to.equal("1,2");
     });
 
     it("should know about shifting arrays", function() {
         var array = [1, 2];
 
         array.unshift(3);
-        expect(array.toString()).to.equal(FILL_ME_IN);
+        expect(array.toString()).to.equal("1,2,3");
 
         var shiftedValue = array.shift();
-        expect(shiftedValue).to.equal(FILL_ME_IN);
-        expect(array.toString()).to.equal(FILL_ME_IN);
+        expect(shiftedValue).to.equal(3);
+        expect(array.toString()).to.equal("1,2");
     });
 });
